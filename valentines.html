@@ -1,0 +1,115 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Be My Valentine ❤️</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 300px;
+            z-index: 10;
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        #no {
+            background-color: #ccc;
+            position: absolute;
+        }
+
+        /* RANDOM IMAGES */
+        .random-img {
+            position: absolute;
+            width: 120px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<!-- RANDOM IMAGES -->
+<img src="img1.jpeg" class="random-img">
+<img src="img2.jpeg" class="random-img">
+<img src="img3.jpeg" class="random-img">
+
+<div class="card">
+    <h1>Hi SugarBear Paula❤️</h1>
+    <p id="message">Will you be my Valentine?</p>
+    <button id="yes" onclick="yesClicked()">Yes 💖</button>
+    <button id="no" onmouseover="moveNo()">No 🙃</button>
+</div>
+
+<script>
+    // RANDOM IMAGE PLACEMENT
+    const images = document.querySelectorAll(".random-img");
+
+    images.forEach(img => {
+        const x = Math.random() * (window.innerWidth - 150);
+        const y = Math.random() * (window.innerHeight - 150);
+        img.style.left = x + "px";
+        img.style.top = y + "px";
+    });
+
+    function yesClicked() {
+        document.body.innerHTML = `
+            <div style="
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:100vh;
+                background:#ffdde1;
+                font-family:Arial;
+                text-align:center;">
+                <h1>Yesssiiiirrrr!! 💕🥰<br>I knew you wouldnt say no💘<br> Plus i did not use chatgpt whatsoever😗</h1>
+            </div>
+        `;
+    }
+
+    function moveNo() {
+        const noBtn = document.getElementById("no");
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+</script>
+
+</body>
+</html>
